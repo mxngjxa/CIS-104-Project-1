@@ -1,38 +1,58 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/dist/output.css" rel="stylesheet">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <title>Login</title>
 
-        <p>Login</p>
+    <style>
+        /* Additional styling for the Remember checkbox */
+        .login-container .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .login-container .form-group label {
+            display: inline-block;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="font-mono text-base font-light bg-beige-100">
+    <div class="login-container">
+        <h2>Login</h2>
 
         <p>Please enter your username and password</p>
 
-        <form class="form-group" action="{{ url_for('login') }}" method="post">
+        <form action="{{ url_for('login') }}" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username" required />
+            </div>
 
-            <p>
-                <label>Username</label>
-                <input type="text" name="username" placeholder="Username" id="username" required />
-            </p>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required />
+            </div>
 
-            <p>
-                <label>Password</label>
-                <input type="password" class="form-control" name="password" placeholder="Password" id="password" required />
-            </p>
+            <div class="form-group">
+                <input type="checkbox" value="checked" />
+                <label class="remember" for="remember"><b>Remember</b></label>
+            </div>
 
-            <input type="checkbox" value="checked" /><b>Remember</b>
-            <br><input type="submit" value="Login" name="" />
-
+            <div class="form-group">
+                <input type="submit" value="Login" name="" />
+            </div>
         </form>
 
         <div id="msg">{{ msg }}</div>
+
+        <div class="form-group">
             <p>No account <a href="{{ url_for('register') }}">Register</a></p>
         </div>
-
-    </body>
+    </div>
+</body>
 
 </html>

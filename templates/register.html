@@ -1,45 +1,48 @@
 <html>
-    <head>
-        <title>Register</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/dist/output.css" rel="stylesheet">
-    </head>
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+</head>
 
-    <body>
-        <p>Register New User</p>
+<body class="font-mono text-base font-light bg-beige-100">
+    <div class="registration-container">
+        <h2>Register New User</h2>
 
         <form action="{{ url_for('register') }}" method="post" autocomplete="off">
-           
-            <p>
-                <label>Your Name</label>
+            <div class="form-group">
+                <label for="fullname">Your Name</label>
                 <input type="text" name="fullname" id="fullname" placeholder="Enter your Name" />
-            </p>
+            </div>
 
-            <p>
-                <label>Your Email</label>
+            <div class="form-group">
+                <label for="email">Your Email</label>
                 <input type="text" name="email" id="email" placeholder="Enter your Email" />
-            </p>
+            </div>
 
-            <p>
-                <label>Username</label>
+            <div class="form-group">
+                <label for="username">Username</label>
                 <input type="text" name="username" id="username" placeholder="Enter your Username" required />
-            </p>
-            
-            <p>
-                <label>Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" required placeholder="Enter your Password" />
-            </p>
-            
-            
-            <div id="msg">{{ msg }}</div>
-            <input type="submit" value="Register" name="" />
-        
-            <p>
-                <a href="{{ url_for('login') }}">Login</a>
-            </p>
-            
-        </form>
+            </div>
 
-    </body>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your Password" required />
+            </div>
+
+            <div id="msg">{{ msg }}</div>
+
+            <div class="form-group">
+                <input type="submit" value="Register" name="" />
+            </div>
+
+            <div class="form-group">
+                <p>
+                    Already have an account? <a href="{{ url_for('login') }}">Login</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
 </html>

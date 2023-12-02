@@ -164,6 +164,24 @@ def profile():
     # user is not loggedin redirect to login page
     return redirect(url_for("login"))
 
+# http://localhost:5000/about - this will be the profile page, only accessible for loggedin users
+@app.route("/about")
+def about():
+    # check if account exists using MySQL
+    conn = mysql.connect()
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+    # check if user is loggedin
+    if "loggedin" in session:
+        # we need all the account info for the user so we can display it on the profile page
+        cursor.execute("SELECT * FROM accounts WHERE id = %s", [session["id"]])
+        account = cursor.fetchone()
+
+        # show the about page
+        return render_template("about.html", account=account)
+
+    # user is not loggedin redirect to login page
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":

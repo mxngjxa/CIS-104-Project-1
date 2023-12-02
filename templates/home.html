@@ -1,21 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/dist/output.css" rel="stylesheet">
-    </head>
-    <body>
-        {% extends 'layout.html' %}
-        {% block title %} Home {% endblock %}
-        {% block content %}
 
-        <p>Dashboard</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+
+<body class="font-mono text-base font-light bg-beige-100">
+    {% extends 'layout.html' %}
+    {% block content %}
+
+    <div class="dashboard-container">
+        <h2>Dashboard</h2>
 
         <p>Welcome back, {{ username }}!</p>
+    </div>
 
-        {% endblock %}    
-    </body>
+    {% endblock %}
+</body>
+
 </html>
-
-
