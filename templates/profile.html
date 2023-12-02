@@ -1,29 +1,39 @@
-{% extends 'layout.html' %} 
-{% block title %} Profile {% endblock %} 
-{% block content %}
-
-<p>Profile Page</p>
-<div>
-    <p>Your account details are below:</p>
-
-    <table>
-        <tr>
-            <td>Name:</td>
-            <td>{{ account['fullname'] }}</td>
-        </tr>
-        <tr>
-            <td>Username:</td>
-            <td>{{ account['username'] }}</td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td>{{ account['password'] }}</td>
-        </tr>
-        <tr>
-            <td>Email:</td>
-            <td>{{ account['email'] }}</td>
-        </tr>
-    </table>
-
-</div>
-{% endblock %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/dist/output.css" rel="stylesheet">
+    </head>
+    <body>
+        {% extends 'layout.html' %} 
+        {% block title %} Profile {% endblock %} 
+        {% block content %}
+        
+        <p>Profile Page</p>
+        <div>
+            <p>Your account details are below:</p>
+        
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{ account['fullname'] }}</td>
+                </tr>
+                <tr>
+                    <td>Username:</td>
+                    <td>{{ account['username'] }}</td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>{{ account['password'] }}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{ account['email'] }}</td>
+                </tr>
+            </table>
+        
+        </div>
+        {% endblock %}
+    </body>
+</html>
