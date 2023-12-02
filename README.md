@@ -1,34 +1,46 @@
-# Demo project for database course
+# Project: AWS Database & User Authentication
 
-## Setup Instructions:
+## Overview
 
-1. download and unzip this repo
+This project focuses on the implementation of a secure website offering user authentication and access to basic account information. AWS services, including Amazon RDS and DynamoDB, are employed to manage the database effectively.
 
-2. import into visual studio code
+## Key Features
 
-3. create python virual enviornment \
-```python -m venv env```
-   
-4. activate the python virual enviornment \
-   (for windows): ```.\env\Scripts\activate``` \
-   (for mac): ```source env/bin/activate```
-   
-5. upgrade the pip \
-```python -m pip install --upgrade pip```
+- **Database Management:**
+  - Utilizes Amazon RDS for scalable and efficient database management.
+  - Implements AWS DynamoDB for seamless data storage and retrieval.
 
-6. install required libraries \
-```pip install -r requirements.txt```
+- **User Authentication:**
+  - Integrates user authentication using AWS Cognito for secure and streamlined sign-in experiences.
+  - Ensures data privacy and security through token-based authentication.
 
-7. add/modify db.yaml file accordingly
+- **Web Interface:**
+  - Develops a user-friendly website using HTML, CSS, and JavaScript.
+  - Implements interactive features for users to sign in and view basic account information.
 
-8. create accounts table in aws mysql database \
-```CREATE DATABASE feitian;```
+## Getting Started
 
-   ```CREATE TABLE `feitian`.`accounts` ( `id` INT NOT NULL AUTO_INCREMENT, `fullname` VARCHAR(255) NULL, `username` VARCHAR(255) NULL, `password` VARCHAR(255) NULL, `email` VARCHAR(255) NULL, PRIMARY KEY (`id`));```
+1. **Prerequisites:**
+   - Install necessary dependencies listed in the requirements.txt file.
+   - Set up an AWS account and configure your credentials.
 
-   ```CREATE TABLE `feitian`.`users` ( `id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(255) NULL,  `email` VARCHAR(255) NULL, PRIMARY KEY (`id`));```
+2. **Database Configuration:**
+   - Create a database instance on Amazon RDS or DynamoDB.
+   - Configure database connection parameters in the config file.
 
-10. run the app \
-```python app.py```
-   
-11. CTRL+C to quit and type ```deactivate```
+3. **User Authentication Setup:**
+   - Set up an AWS Cognito user pool.
+   - Update authentication details in the authentication_config.js file.
+
+4. **Launch the Website:**
+   - Run the website locally or deploy it to a hosting service of your choice.
+   - Access the website and test the user authentication functionality.
+
+## Contributing
+
+Contributions are welcome! Submit issues, feature requests, or pull requests adhering to our [code of conduct](CODE_OF_CONDUCT.md).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
